@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>REIN · REC Environmental Display</title>
+  <link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+  <div id="stage">
+    <div id="canvas" role="application" aria-label="REC campus environmental LED display">
+
+      <header class="masthead">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">R</div>
+          <div>
+            <p class="brand-kicker">REC Environmental Intelligence Network</p>
+            <h1>Campus Environmental Display</h1>
+            <p class="brand-sub" data-bind="campus.name">Rajalakshmi Engineering College · Thandalam, Chennai</p>
+          </div>
+        </div>
+
+        <div class="live-block">
+          <span class="live-pill"><i></i> LIVE</span>
+          <div class="time-block">
+            <time id="clock" datetime="">00:00:00</time>
+            <p id="date-line">Wednesday, 19 August 2026</p>
+          </div>
+        </div>
+      </header>
+
+      <main id="slides">
+        <!-- WEATHER -->
+        <section class="slide is-active" data-slide="weather" aria-label="Weather">
+          <div class="slide-heading">
+            <div>
+              <p class="section-kicker">Live Campus Conditions</p>
+              <h2>Weather</h2>
+            </div>
+            <div class="heading-status" data-status="weather.status.status">
+              <span class="status-dot"></span>
+              <span data-bind="weather.status.value">Partly Cloudy</span>
+            </div>
+          </div>
+
+          <div class="weather-layout">
+            <article class="feature-card weather-feature" style="--i:0">
+              <div class="weather-orb" aria-hidden="true">
+                <span class="sun"></span>
+                <span class="cloud one"></span>
+                <span class="cloud two"></span>
+              </div>
+              <p class="feature-label">Current Temperature</p>
+              <p class="feature-value" data-bind="weather.temperature.value">29.4<span class="unit">°C</span></p>
+              <h3 data-bind="weather.status.value">Partly Cloudy</h3>
+              <p class="feature-meta" data-bind="weather.status.meta">Light SW winds at 9 km/h</p>
+              <span class="large-chip" data-status="weather.temperature.status">Comfortable</span>
+            </article>
+
+            <div class="metric-grid weather-metrics">
+              <article class="metric-card" data-metric="weather.humidity" style="--i:1">
+                <div class="metric-top"><span>Humidity</span><b>RH</b></div>
+                <p class="metric-value">54<span class="unit">%</span></p>
+                <p class="metric-meta">Within comfort band</p>
+              </article>
+
+              <article class="metric-card" data-metric="weather.heatIndex" style="--i:2">
+                <div class="metric-top"><span>Heat Index</span><b>HI</b></div>
+                <p class="metric-value">31.2<span class="unit">°C</span></p>
+                <p class="metric-meta">Feels warmer due to humidity</p>
+              </article>
+
+              <article class="metric-card" data-metric="weather.dewPoint" style="--i:3">
+                <div class="metric-top"><span>Dew Point</span><b>DP</b></div>
+                <p class="metric-value">18.5<span class="unit">°C</span></p>
+                <p class="metric-meta">Moderate moisture</p>
+              </article>
+
+              <article class="metric-card wind-card" data-metric="weather.windSpeed" style="--i:4">
+                <div class="metric-top"><span>Wind</span><b>WND</b></div>
+                <div class="wind-row">
+                  <p class="metric-value">9<span class="unit">km/h</span></p>
+                  <div class="wind-direction">
+                    <i id="wind-needle"></i>
+                    <span data-bind="weather.windDirection.value">SW</span>
+                  </div>
+                </div>
+                <p class="metric-meta">Light breeze</p>
+              </article>
+
+              <article class="metric-card" data-metric="weather.rainfall" style="--i:5">
+                <div class="metric-top"><span>Rainfall</span><b>RAIN</b></div>
+                <p class="metric-value">0.0<span class="unit">mm</span></p>
+                <p class="metric-meta">12.4 mm this week</p>
+              </article>
+
+              <article class="metric-card alert-card" data-metric="weather.rainAlert" style="--i:6">
+                <div class="metric-top"><span>Rain Alert</span><b>ALERT</b></div>
+                <p class="metric-value compact">Clear</p>
+                <p class="metric-meta">No rain expected in the next 6 hours</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- AIR QUALITY -->
+        <section class="slide" data-slide="air" aria-label="Air quality">
+          <div class="slide-heading">
+            <div>
+              <p class="section-kicker">Live Campus Conditions</p>
+              <h2>Air Quality</h2>
+            </div>
+            <div class="heading-status" data-status="air.aqi.status">
+              <span class="status-dot"></span>
+              <span data-bind="air.aqiCategory.value">Good</span>
+            </div>
+          </div>
+
+          <div class="air-layout">
+            <article class="feature-card air-feature" style="--i:0">
+              <p class="feature-label">Air Quality Index</p>
+              <p class="aqi-value"><span data-bind="air.aqi.value">42</span><small>AQI</small></p>
+              <h3 data-bind="air.aqiCategory.value">Good</h3>
+              <p class="feature-meta">Dominant pollutant · <strong data-bind="air.dominantPollutant.value">PM2.5</strong></p>
+
+              <div class="aqi-scale" aria-hidden="true">
+                <div class="aqi-track"><i id="aqi-marker"></i></div>
+                <div class="aqi-labels"><span>Good</span><span>Satisfactory</span><span>Moderate</span><span>Poor</span><span>Severe</span></div>
+              </div>
+
+              <div class="air-mini-row">
+                <div><span>Temperature</span><strong><i data-bind="air.temperature.value">29.4</i>°C</strong></div>
+                <div><span>Humidity</span><strong><i data-bind="air.humidity.value">54</i>%</strong></div>
+              </div>
+
+              <div class="feature-alert" data-status="air.alerts.status">
+                <span>Air Advisory</span>
+                <strong data-bind="air.alerts.value">1 Advisory</strong>
+                <p data-bind="air.alerts.meta">Ozone slightly elevated this afternoon</p>
+              </div>
+            </article>
+
+            <div class="air-metrics">
+              <div class="metric-section" style="--i:1">
+                <div class="metric-section-title"><span>Particulate Matter</span><small>µg/m³</small></div>
+                <div class="pm-row">
+                  <article class="air-card" data-metric="air.pm1"><span>PM1</span><strong>12</strong><small>Ultrafine particles</small></article>
+                  <article class="air-card" data-metric="air.pm25"><span>PM2.5</span><strong>18</strong><small>Fine particles</small></article>
+                  <article class="air-card" data-metric="air.pm4"><span>PM4</span><strong>24</strong><small>Coarse-fine mix</small></article>
+                  <article class="air-card" data-metric="air.pm10"><span>PM10</span><strong>32</strong><small>Inhalable dust</small></article>
+                </div>
+              </div>
+
+              <div class="metric-section" style="--i:2">
+                <div class="metric-section-title"><span>Atmospheric Gases</span><small>Live sensor readings</small></div>
+                <div class="gas-row">
+                  <article class="air-card" data-metric="air.co2"><span>CO₂</span><strong>410</strong><em>ppm</em><small>Carbon dioxide</small></article>
+                  <article class="air-card" data-metric="air.nox"><span>NOx</span><strong>18</strong><em>ppb</em><small>Nitrogen oxides</small></article>
+                  <article class="air-card" data-metric="air.voc"><span>VOC</span><strong>3</strong><em>index</em><small>Volatile organics</small></article>
+                  <article class="air-card" data-metric="air.co"><span>CO</span><strong>0.5</strong><em>ppm</em><small>Carbon monoxide</small></article>
+                  <article class="air-card" data-metric="air.o3"><span>O₃</span><strong>42</strong><em>ppb</em><small>Ground-level ozone</small></article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NOISE -->
+        <section class="slide" data-slide="noise" aria-label="Noise">
+          <div class="slide-heading">
+            <div>
+              <p class="section-kicker">Live Campus Conditions</p>
+              <h2>Noise</h2>
+            </div>
+            <div class="heading-status" data-status="noise.level.status">
+              <span class="status-dot"></span>
+              <span data-bind="noise.category.value">Low</span>
+            </div>
+          </div>
+
+          <div class="noise-layout">
+            <article class="feature-card noise-feature" style="--i:0">
+              <p class="feature-label">Campus Average</p>
+              <p class="noise-value" data-bind="noise.level.value">48<span class="unit">dB(A)</span></p>
+              <h3 data-bind="noise.status.value">Quiet — Safe</h3>
+              <p class="feature-meta" data-bind="noise.level.meta">Campus average · peak 64 dB(A)</p>
+
+              <div class="noise-meter" aria-hidden="true">
+                <div class="noise-legend"><span>Low</span><span>Moderate</span><span>High</span></div>
+                <div class="noise-track"><i id="noise-needle"></i></div>
+                <div class="noise-ticks"><span>30</span><span>55</span><span>70</span><span>90 dB</span></div>
+              </div>
+            </article>
+
+            <div class="noise-summary">
+              <article class="summary-card" data-metric="noise.category" style="--i:1">
+                <p class="summary-label">Noise Category</p>
+                <p class="summary-value compact">Low</p>
+                <div class="category-row" id="noise-cats">
+                  <div class="category is-on" data-tier="low"><i></i><strong>Low</strong><small>&lt; 55 dB</small></div>
+                  <div class="category" data-tier="moderate"><i></i><strong>Moderate</strong><small>55–70 dB</small></div>
+                  <div class="category" data-tier="high"><i></i><strong>High</strong><small>&gt; 70 dB</small></div>
+                </div>
+              </article>
+
+              <article class="summary-card" data-metric="noise.status" style="--i:2">
+                <p class="summary-label">Current Status</p>
+                <p class="summary-value compact">Quiet — Safe</p>
+                <p class="summary-meta">Within comfort thresholds for study and rest</p>
+              </article>
+
+              <article class="summary-card" data-metric="noise.alerts" style="--i:3">
+                <p class="summary-label">Noise Alerts</p>
+                <p class="summary-value compact">None</p>
+                <p class="summary-meta">All monitored zones within limits</p>
+                <span class="large-chip" data-status="noise.alerts.status">Clear</span>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="dock">
+        <nav class="dots" aria-label="Slides">
+          <button type="button" class="dot is-on" data-go="0"><span>Weather</span></button>
+          <button type="button" class="dot" data-go="1"><span>Air Quality</span></button>
+          <button type="button" class="dot" data-go="2"><span>Noise</span></button>
+        </nav>
+        <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+        <p class="hint" id="pause-hint">Auto · 12s</p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

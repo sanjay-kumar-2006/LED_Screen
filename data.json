@@ -1,0 +1,249 @@
+{
+  "campus": {
+    "name": "Rajalakshmi Engineering College",
+    "short": "REC",
+    "network": "REIN",
+    "networkFull": "REC Environmental Intelligence Network",
+    "location": "Thandalam, Chennai"
+  },
+  "lastUpdated": "Live campus sensors",
+  "weather": {
+    "temperature": {
+      "value": "29.4",
+      "unit": "°C",
+      "meta": "↑ 1.1° from yesterday",
+      "status": "good",
+      "statusLabel": "Comfortable"
+    },
+    "humidity": {
+      "value": "54",
+      "unit": "%",
+      "meta": "Within comfort band",
+      "status": "good",
+      "statusLabel": "Comfortable"
+    },
+    "rainfall": {
+      "value": "0.0",
+      "unit": "mm",
+      "meta": "12.4 mm this week",
+      "status": "excellent",
+      "statusLabel": "Dry"
+    },
+    "windSpeed": {
+      "value": "9",
+      "unit": "km/h",
+      "meta": "Light breeze",
+      "status": "excellent",
+      "statusLabel": "Calm"
+    },
+    "windDirection": {
+      "value": "SW",
+      "unit": "",
+      "degrees": 225,
+      "meta": "From the southwest",
+      "status": "good",
+      "statusLabel": "Steady"
+    },
+    "heatIndex": {
+      "value": "31.2",
+      "unit": "°C",
+      "meta": "Feels warmer due to humidity",
+      "status": "moderate",
+      "statusLabel": "Warm"
+    },
+    "dewPoint": {
+      "value": "18.5",
+      "unit": "°C",
+      "meta": "Moderate moisture",
+      "status": "good",
+      "statusLabel": "Normal"
+    },
+    "status": {
+      "value": "Partly Cloudy",
+      "unit": "",
+      "meta": "Light SW winds at 9 km/h",
+      "status": "excellent",
+      "statusLabel": "Stable"
+    },
+    "rainAlert": {
+      "value": "Clear",
+      "unit": "",
+      "meta": "No rain expected in the next 6 hours",
+      "status": "excellent",
+      "statusLabel": "No Alert"
+    },
+    "healthScore": {
+      "value": 82,
+      "unit": "",
+      "meta": "Optimal zone for outdoor activity",
+      "status": "good",
+      "statusLabel": "Optimal"
+    },
+    "vpd": {
+      "value": "1.88",
+      "unit": "kPa",
+      "meta": "From temp, RH and dew point",
+      "status": "moderate",
+      "statusLabel": "Elevated"
+    },
+    "gdd": {
+      "value": "19.4",
+      "unit": "",
+      "meta": "Season 3,842 · base 10°C",
+      "status": "good",
+      "statusLabel": "Today"
+    }
+  },
+  "air": {
+    "pm1": {
+      "value": "12",
+      "unit": "µg/m³",
+      "meta": "Ultrafine particles",
+      "status": "excellent",
+      "statusLabel": "Excellent"
+    },
+    "pm25": {
+      "value": "18",
+      "unit": "µg/m³",
+      "meta": "Fine particles",
+      "status": "good",
+      "statusLabel": "Good"
+    },
+    "pm4": {
+      "value": "24",
+      "unit": "µg/m³",
+      "meta": "Coarse-fine mix",
+      "status": "moderate",
+      "statusLabel": "Moderate"
+    },
+    "pm10": {
+      "value": "32",
+      "unit": "µg/m³",
+      "meta": "Inhalable dust",
+      "status": "good",
+      "statusLabel": "Good"
+    },
+    "co2": {
+      "value": "410",
+      "unit": "ppm",
+      "meta": "Carbon dioxide",
+      "status": "good",
+      "statusLabel": "Normal"
+    },
+    "nox": {
+      "value": "18",
+      "unit": "ppb",
+      "meta": "Nitrogen oxides",
+      "status": "good",
+      "statusLabel": "Normal"
+    },
+    "voc": {
+      "value": "3",
+      "unit": "index",
+      "meta": "Volatile organics",
+      "status": "excellent",
+      "statusLabel": "Low"
+    },
+    "co": {
+      "value": "0.5",
+      "unit": "ppm",
+      "meta": "Carbon monoxide",
+      "status": "excellent",
+      "statusLabel": "Safe"
+    },
+    "o3": {
+      "value": "42",
+      "unit": "ppb",
+      "meta": "Ground-level ozone",
+      "status": "moderate",
+      "statusLabel": "Elevated"
+    },
+    "temperature": {
+      "value": "29.4",
+      "unit": "°C",
+      "meta": "Outdoor air",
+      "status": "good",
+      "statusLabel": "Warm"
+    },
+    "humidity": {
+      "value": "54",
+      "unit": "%",
+      "meta": "Ambient moisture",
+      "status": "good",
+      "statusLabel": "Normal"
+    },
+    "aqi": {
+      "value": "42",
+      "unit": "",
+      "meta": "India / CPCB style index",
+      "status": "good",
+      "statusLabel": "Good"
+    },
+    "aqiCategory": {
+      "value": "Good",
+      "unit": "",
+      "meta": "Suitable for all groups",
+      "status": "good",
+      "statusLabel": "Good"
+    },
+    "dominantPollutant": {
+      "value": "PM2.5",
+      "unit": "",
+      "meta": "Primary driver of AQI",
+      "status": "good",
+      "statusLabel": "Dominant"
+    },
+    "healthScore": {
+      "value": 88,
+      "unit": "",
+      "meta": "Healthy air for campus activity",
+      "status": "good",
+      "statusLabel": "Healthy"
+    },
+    "alerts": {
+      "value": "1 Advisory",
+      "unit": "",
+      "meta": "Ozone slightly elevated this afternoon",
+      "status": "moderate",
+      "statusLabel": "Watch"
+    }
+  },
+  "noise": {
+    "level": {
+      "value": "48",
+      "unit": "dB(A)",
+      "meta": "Campus average · peak 64 dB(A)",
+      "status": "excellent",
+      "statusLabel": "Quiet"
+    },
+    "status": {
+      "value": "Quiet — Safe",
+      "unit": "",
+      "meta": "Within comfort thresholds for study and rest",
+      "status": "excellent",
+      "statusLabel": "Safe"
+    },
+    "category": {
+      "value": "Low",
+      "unit": "",
+      "meta": "< 55 dB(A) · Low / Moderate / High",
+      "status": "excellent",
+      "statusLabel": "Low",
+      "tier": "low"
+    },
+    "healthScore": {
+      "value": 88,
+      "unit": "",
+      "meta": "Ideal condition for focus and rest",
+      "status": "good",
+      "statusLabel": "Good"
+    },
+    "alerts": {
+      "value": "None",
+      "unit": "",
+      "meta": "All monitored zones within limits",
+      "status": "excellent",
+      "statusLabel": "Clear"
+    }
+  }
+}
